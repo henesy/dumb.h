@@ -1,11 +1,11 @@
 CC=gcc
 CFLAGS=-Wall -pedantic -c
 AR=ar
-ARFLAGS=-cvq
+ARFLAGS=cvq
 
 all: 
 	$(CC) $(CFLAGS) *.c
-	$(AR) $(ARFLGS) libdumb.a *.o
+	$(AR) $(ARFLAGS) libdumb.a *.o
 
 clean: 
 	rm *.o
