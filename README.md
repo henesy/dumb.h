@@ -10,7 +10,7 @@ Builds on:
 
 ## To Build:
 
-### Windows (MinGW)
+### Windows (MinGW and Cygwin64)
 `make`
 
 ### Linux

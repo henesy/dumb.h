@@ -1,5 +1,6 @@
 #ifndef DUMB_H
 #define DUMB_H
+#pragma lib "libdumb.a"
 
 #ifdef __unix__
 #include <stdio.h>
@@ -15,7 +16,6 @@
 	#else
 	#include <u.h>
 	#include <libc.h>
-	#pragma lib "libdumb.a"
 	#endif
 #endif
 

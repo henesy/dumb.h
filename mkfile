@@ -8,17 +8,20 @@ all: stack.c
 
 nuke: 
 	rm *.$O
-	rm $LIB/libdumb.a
-	rm $HDR/dumb.h
 	rm libdumb.a
 
 install: libdumb.a
 	cp libdumb.a $LIB
 	cp dumb.h $HDR
 
+uninstall: nuke
+	rm $LIB/libdumb.a
+	rm $HDR/dumb.h
+
+rebuild: uninstall all install
+
 tests: install tests/stacktest.c
 	$CC $prereq
 
 man: 
 	cp ./man/dumb.3 /sys/man/dumb
-
