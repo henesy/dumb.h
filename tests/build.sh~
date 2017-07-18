@@ -1,4 +1,0 @@
-#!/bin/sh
-
-gcc *.c -L/usr/include -L/usr/lib -ldumb
-
