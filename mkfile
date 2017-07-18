@@ -1,11 +1,21 @@
 </$objtype/mkfile
-LIB=/$objtype/lib/libdumb.a
+LIB=/$objtype/lib
+HDR=/$objtype/include
 
-all: 
-	$CC -c *.c
-	ar vu $LIB *.o
+all: stack.c
+	$CC -c $prereq
+	ar vu libdumb.a *.$O
 
 nuke: 
-	rm *.o
-	rm $LIB
+	rm *.$O
+	rm $LIB/libdumb.a
+	rm $HDR/dumb.h
+	rm libdumb.a
 
+install: libdumb.a
+	cp libdumb.a $LIB
+	cp dumb.h $HDR
+
+tests: install tests/stacktest.c
+	$CC $prereq
+	

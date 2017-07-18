@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -pedantic -c
+CFLAGS=-Wall -c
 AR=ar
 ARFLAGS=cvq
 
@@ -14,4 +14,3 @@ clean:
 install:
 	cp libdumb.a /usr/lib
 	cp dumb.h /usr/include
-
