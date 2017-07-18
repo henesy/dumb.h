@@ -28,9 +28,19 @@ winuninstall:
 	rm 'C:/mingw/lib/libdumb.a'
 	rm 'C:/mingw/include/dumb.h'
 
+cyginstall:
+	cp libdumb.a 'C:/cygwin64/usr/x86_64-pc-cygwin/lib/libdumb.a'
+	cp dumb.h 'C:/cygwin64/usr/include/dumb.h'
+
+cyguninstall:
+	rm 'C:/cygwin64/usr/x86_64-pc-cygwin/lib/libdumb.a'
+	rm 'C:/cygwin64/usr/include/dumb.h'
+
 rebuild: clean uninstall all install
 
 winrebuild: clean winuninstall all wininstall
+
+cygrebuild: clean cyguninstall all cyginstall
 
 man:
 	gzip -c ./man/dumb.3 > /usr/man/man3/dumb.3.gz

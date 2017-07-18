@@ -6,6 +6,7 @@ Builds on:
 * Slackware64
 * Plan 9
 * MinGW
+* Cygwin64
 
 ## To Build:
 
@@ -23,6 +24,9 @@ Builds on:
 ### Windows (MinGW)
 `make wininstall`
 
+### Windows (Cygwin64)
+`make wininstall`
+
 ### Linux
 `make install`
 
@@ -35,6 +39,9 @@ Builds on:
 
 ### Windows (MinGW)
 `./winall.sh`
+
+### Windows (Cygwin64)
+`./cygall.sh`
 
 ### Linux
 `./all.sh`
@@ -50,6 +57,11 @@ Builds on:
 Assuming `gcc`
 
 Use the arguments: `-L'C:/mingw/include' -L'C:/mingw/lib' -ldumb`
+
+### Windows (Cygwin64)
+Assuming `gcc`
+
+Use the arguments: `-L'C:/cygwin64/usr/include' -L'C:/cygwin64/usr/x86_64-pc-cygwin/lib' -ldumb`
 
 ### Linux
 Assuming `gcc`
