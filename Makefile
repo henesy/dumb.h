@@ -21,4 +21,7 @@ uninstall:
 	rm /usr/include/dumb.h
 
 rebuild: clean uninstall all install
-	
+
+man:
+	gzip -c ./man/dumb.3 > /usr/man/man3/dumb.3.gz
+

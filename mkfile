@@ -18,4 +18,7 @@ install: libdumb.a
 
 tests: install tests/stacktest.c
 	$CC $prereq
-	
+
+man: 
+	cp ./man/dumb.3 /sys/man/dumb
+
