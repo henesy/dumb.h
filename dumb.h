@@ -7,9 +7,16 @@
 #define nil ((void*)0)
 #define print(format, ...) fprintf(stdout, format, ##__VA_ARGS__)
 #else
-#include <u.h>
-#include <libc.h>
-#pragma lib "libdumb.a"
+	#ifdef __WIN32__
+	#include <stdio.h>
+	#include <stdlib.h>
+	#define nil ((void*)0)
+	#define print(format, ...) fprintf(stdout, format, ##__VA_ARGS__)
+	#else
+	#include <u.h>
+	#include <libc.h>
+	#pragma lib "libdumb.a"
+	#endif
 #endif
 
 /* avoid using u.h, assume amd64 */
