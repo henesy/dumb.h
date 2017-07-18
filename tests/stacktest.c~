@@ -1,0 +1,13 @@
+#include <dumb.h>
+#include <stdio.h>
+
+void
+main()
+{
+	Stack s = mkstack();
+	int myint = 35;
+	stackpush(&s, &myint);
+	printf("%d", (int)s.size);
+	void * = stackpop(&s);
+}
+

@@ -12,10 +12,10 @@ mkstack(void)
 void
 stackpush(Stack * s, void * data)
 {
-	StackNode node;
-	node.data = data;
-	node.below = s->top;
-	s->top = &node;
+	StackNode * node = (StackNode*)malloc(sizeof(StackNode));
+	node->data = data;
+	node->below = s->top;
+	s->top = node;
 	s->size++;
 }
 
@@ -23,11 +23,12 @@ void *
 stackpop(Stack * s)
 {
 	if(s->size > 0){
-		StackNode * old = s->top;
-		s->top = s->top->below;
-		free(old);
+		StackNode * next = s->top->below;
+		void * data = s->top->data;
+		free(s->top);
+		s->top = next;
 		s->size--;
-		return s->top->data;
+		return data;
 	}else{
 		return nil;
 	}
