@@ -40,5 +40,4 @@ struct Stack
 	uint64 size;
 };
 
-
 #endif
