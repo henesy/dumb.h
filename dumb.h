@@ -28,12 +28,6 @@ Stack mkstack(void);
 void stackpush(Stack *, void *);
 void * stackpop(Stack *);
 
-struct StackNode
-{
-	StackNode * below;
-	void * data;
-};
-
 struct Stack
 {
 	StackNode * top;

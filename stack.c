@@ -1,5 +1,11 @@
 #include "dumb.h"
 
+struct StackNode
+{
+	StackNode * below;
+	void * data;
+};
+
 Stack
 mkstack(void)
 {
