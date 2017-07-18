@@ -3,6 +3,7 @@
 void
 main()
 {
+	print("\nTesting Stack\n");
 	Stack s = mkstack();
 	int myint = 35;
 	int yourint = 42;
