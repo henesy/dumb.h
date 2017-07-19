@@ -41,4 +41,19 @@ struct Stack
 	uint64 size;
 };
 
+/* queue.c */
+typedef struct Queue Queue;
+typedef struct QueueNode QueueNode;
+
+Queue mkqueue(void);
+void enqueue(Queue *, void *);
+void * dequeue(Queue *);
+
+struct Queue
+{
+	QueueNode * head;
+	QueueNode * tail;
+	uint64 size;
+};
+
 #endif
