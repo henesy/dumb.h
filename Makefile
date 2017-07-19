@@ -3,6 +3,7 @@ CFLAGS=-ggdb -Wall -c
 AR=ar
 ARFLAGS=cvq
 MAKE=make
+HOME=/home/seh
 
 all: 
 	$(CC) $(CFLAGS) *.c
@@ -11,6 +12,16 @@ all:
 clean: 
 	rm *.o
 	rm *.a
+
+homeinstall: libdumb.a
+	cp libdumb.a $(HOME)/lib/libdumb.a
+	cp dumb.h $(HOME)/include/dumb.h
+
+homeuninstall:
+	rm $(HOME)/lib/libdumb.a
+	rm $(HOME)/include/dumb.h
+
+homerebuild: clean homeuninstall all homeinstall
 
 install: libdumb.a
 	cp libdumb.a /usr/lib/libdumb.a

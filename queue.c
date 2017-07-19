@@ -43,7 +43,9 @@ dequeue(Queue * q)
 	if(q->size > 0){
 		QueueNode * prev = q->head->prev;
 		void * data = q->head->data;
-		prev->next=nil;
+		if(prev != nil){
+			prev->next=nil;
+		}
 		free(q->head);
 		q->head = prev;
 		q->size--;
