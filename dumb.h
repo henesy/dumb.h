@@ -56,4 +56,22 @@ struct Queue
 	uint64 size;
 };
 
+/* list.c */
+typedef struct List List;
+typedef struct ListNode ListNode;
+
+List mklist(void);
+void listadd(List *, void *);
+void * listdel(List *, int);
+void * listget(List *, int);
+void * car(List *);
+List * cdr(List *);
+
+struct List
+{
+	ListNode * head;
+	ListNode * tail;
+	uint64 size;
+};
+
 #endif

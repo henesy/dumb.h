@@ -2,7 +2,7 @@
 LIB=/$objtype/lib
 HDR=/$objtype/include
 
-all: stack.c queue.c
+all: stack.c queue.c list.c
 	$CC -c $prereq
 	ar vu libdumb.a *.$O
 
@@ -20,8 +20,11 @@ uninstall: nuke
 
 rebuild: uninstall all install
 
-tests: install tests/stacktest.c tests/queuetest.c
+tests: install tests/stacktest.c tests/queuetest.c tests/listtest.c
 	$CC $prereq
 
 man: 
 	cp ./man/dumb.3 /sys/man/dumb
+
+lf:
+	ssam ',s/\r//g' *.[h c md]
