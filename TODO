@@ -1,3 +1,4 @@
+* phase out stdio and stdlib
 * mu.h as a u.h supplement potentially with dumb.h becoming libc.h, essentially
 * Implement net library in the Plan 9 spirit
 * libtroff or something similar to render html to troff/nroff/postscript
