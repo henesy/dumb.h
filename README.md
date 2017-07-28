@@ -1,6 +1,8 @@
 # dumb.h
 Utilitarian library from SVI space
 
+A 9Front-specific fork exists at: https://bitbucket.org/henesy/libds
+
 Builds on:
 
 * Slackware64
